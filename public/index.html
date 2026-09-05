@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduBot AI — Tutoriel 3D Interactif</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <canvas id="scene"></canvas>
+  <div class="vignette"></div>
+  <div class="scanlines"></div>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo-orb"></div>
+      <div>
+        <strong>EDUBOT AI</strong>
+        <span>Tutoriel Interactif 3D</span>
+      </div>
+    </div>
+    <nav>
+      <button data-goto="0" class="active">Accueil</button>
+      <button data-goto="1">Démarrer</button>
+      <button data-goto="2">Documents</button>
+      <button data-goto="3">Apprendre</button>
+      <button data-goto="4">Voix</button>
+    </nav>
+    <button class="lang-btn" id="langBtn">EN</button>
+  </header>
+  <main class="hud">
+    <section class="panel left" id="infoPanel">
+      <p class="kicker" data-i18n="kicker">Plateforme d'apprentissage IA</p>
+      <h1 id="title">Rencontrez <em>EduBot</em></h1>
+      <p class="lead" id="lead">Votre tuteur intelligent, disponible 24/7. Explorez le tutoriel en orbitant autour du robot.</p>
+      <ul class="features" id="features">
+        <li><span>01</span> Conversations contextualisées</li>
+        <li><span>02</span> Upload de cours & syllabus</li>
+        <li><span>03</span> Parcours adaptatifs</li>
+        <li><span>04</span> Interaction vocale</li>
+      </ul>
+      <div class="cta-row">
+        <button class="btn primary" id="startBtn">Lancer le tutoriel</button>
+        <button class="btn ghost" id="orbitBtn">Mode orbite</button>
+      </div>
+    </section>
+    <aside class="modules" id="modules">
+      <article class="mod" data-step="0"><small>Module 01</small><h3>Bienvenue</h3><p>Découvrez l'univers EduBot.</p></article>
+      <article class="mod" data-step="1"><small>Module 02</small><h3>Premier chat</h3><p>Posez votre première question.</p></article>
+      <article class="mod" data-step="2"><small>Module 03</small><h3>Documents</h3><p>Importez vos supports de cours.</p></article>
+      <article class="mod" data-step="3"><small>Module 04</small><h3>Parcours</h3><p>Suivez un chemin personnalisé.</p></article>
+      <article class="mod" data-step="4"><small>Module 05</small><h3>Voix & IA</h3><p>Parlez naturellement à EduBot.</p></article>
+    </aside>
+  </main>
+  <div class="chat-demo" id="chatDemo">
+    <div class="chat-head"><span class="dot"></span> EduBot en ligne<button id="closeChat">×</button></div>
+    <div class="chat-body" id="chatBody"><div class="msg bot">Bonjour ! Je suis EduBot. Que souhaitez-vous apprendre aujourd'hui ?</div></div>
+    <form id="chatForm">
+      <input type="text" id="chatInput" placeholder="Posez une question…" autocomplete="off" />
+      <button type="submit">➤</button>
+    </form>
+  </div>
+  <footer class="hint">
+    <span>Glissez pour orbiter · Molette pour zoomer · Cliquez un module</span>
+    <span class="step-indicator" id="stepInd">01 / 05</span>
+  </footer>
+  <script type="importmap">
+  {"imports": {"three": "https://unpkg.com/three@0.170.0/build/three.module.js", "three/addons/": "https://unpkg.com/three@0.170.0/examples/jsm/"}}
+  </script>
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>
