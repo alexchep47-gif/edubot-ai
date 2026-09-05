@@ -1,0 +1,9 @@
+{
+  "name": "edubot-ai",
+  "version": "1.0.0",
+  "description": "Site 3D interactif pour le tutoriel EduBot AI",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
